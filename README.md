@@ -6,7 +6,7 @@
 
 ## Component Diagram
 
-[Tap Room Component Diagram](Placeholder)
+![Tap Room Component Diagram](https://github.com/Patrick-Dolan/tap-room/blob/main/readme_images/ComponentTree.PNG?raw=true)
 
 ## Technologies Used
 
