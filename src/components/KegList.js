@@ -4,26 +4,28 @@ import Keg from "./Keg";
 
 function KegList(props) {
   //Temp Data
-  const kegList = [
-    {
-      name: "ThunderBrew",
-      brand: "Ol' Dwarvish",
-      price: 5,
-      alcoholContent: 12,
-      pints: 100
-    },
-    {
-      name: "ThunderBrew",
-      brand: "Ol' Dwarvish",
-      price: 5,
-      alcoholContent: 12,
-      pints: 100
-    }
-  ]
+  // const kegList = [
+  //   {
+  //     name: "ThunderBrew",
+  //     brand: "Ol' Dwarvish",
+  //     price: 5,
+  //     alcoholContent: 12,
+  //     pints: 100,
+  //     id: "gerqgfgargretg"
+  //   },
+  //   {
+  //     name: "ThunderBrew",
+  //     brand: "Ol' Dwarvish",
+  //     price: 5,
+  //     alcoholContent: 12,
+  //     pints: 100,
+  //     id: "hsDfagerhgerhqeretg"
+  //   }
+  // ]
   
   return (
     <React.Fragment>
-      {kegList.map((keg) => 
+      {props.kegList.map((keg) => 
         <Keg
           name={keg.name}
           brand={keg.brand}
