@@ -1,4 +1,5 @@
 import React from "react";
+import KegDetail from "./KegDetail";
 import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 
@@ -7,14 +8,22 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       mainKegList: [],
-      formVisible: false
+      formVisible: false,
+      selectedKeg: null
     }
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisible: !prevState.formVisible
-    }));
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisible: false,
+        selectedKeg: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible
+      }));
+    }
   }
 
   handleAddingNewKegToList = newKeg => {
@@ -25,15 +34,25 @@ class KegControl extends React.Component {
     });
   }
 
+  handleChangingSelectedKeg = kegId => {
+    const selectedKeg = this.state.mainKegList.filter(keg => keg.id === kegId )[0];
+    this.setState({
+      selectedKeg: selectedKeg
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.formVisible) {
+    if (this.state.selectedKeg !== null) {
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} />
+      buttonText="Return to Keg List";
+    } else if (this.state.formVisible) {
       currentlyVisibleState = <NewKegForm onNewTicketCreation={this.handleAddingNewKegToList} />
       buttonText="Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} />
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />
       buttonText="Add Keg to Inventory";
     }
 
