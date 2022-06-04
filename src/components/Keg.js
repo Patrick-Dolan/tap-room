@@ -11,7 +11,7 @@ function Keg(props) {
       <p>Alcohol Content: {props.alcoholContent}%</p>
       <p>Pints: {props.pints} Remaining</p>
       <Button className="me-2" onClick = {() => props.whenKegClicked(props.id)}>Keg Details</Button>
-      <Button className="me-2" onClick = {() => props.whenDecrementingPintsClicked(props.id)}>Sell Pint</Button>
+      <Button variant="success" className="me-2" onClick = {() => props.whenDecrementingPintsClicked(props.id)}>Sell Pint</Button>
       <hr />
     </React.Fragment>
   );
