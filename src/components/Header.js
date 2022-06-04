@@ -1,10 +1,13 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 function Header() {
   return (
     <React.Fragment>
-      <h1>The Tap Room</h1>
-      <hr />
+      <Container>
+        <h1>The Tap Room</h1>
+        <hr />
+      </Container>
     </React.Fragment>
   );
 }
