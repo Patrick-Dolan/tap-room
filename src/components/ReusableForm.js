@@ -11,11 +11,11 @@ function ReusableForm(props) {
           <Row>
             <Col>
               <Form.Group className="mb-3">
-                <Form.Label>Keg Name</Form.Label>
+                <Form.Label>Brew Name</Form.Label>
                 <Form.Control
                   type="text"
                   name="name"
-                  placeholder="Brew Name" 
+                  placeholder="EX: Thunder Head" 
                   required />
               </Form.Group>
             </Col>
@@ -25,7 +25,7 @@ function ReusableForm(props) {
                 <Form.Control
                   type="text"
                   name="brand"
-                  placeholder="Brand Name"
+                  placeholder="EX: Ol' Dwarvish"
                   required />
               </Form.Group>
             </Col>
@@ -37,28 +37,31 @@ function ReusableForm(props) {
                 <Form.Control
                   type="number"
                   name="price"
-                  placeholder="Price"
+                  placeholder="EX: 6"
                   required />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3">
-                <Form.Label>Alcohol Content</Form.Label>          
+                <Form.Label>Alcohol Content Percentage</Form.Label>          
                 <Form.Control
                   type="number"
                   name="alcoholContent"
-                  placeholder="Alcohol Content Percentage"
+                  placeholder="EX: 5"
                   required />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3">
-                <Form.Label>Pints</Form.Label>
+                <Form.Label>Number of Kegs</Form.Label>
                 <Form.Control
                   type="number"
-                  name="pints"
-                  placeholder="Pints"
-                  required />
+                  name="kegs"
+                  placeholder="EX: 2"
+                  required 
+                  step="0.1"
+                  min="0.1" />
+                  <Form.Text className="text-muted">You can add open casks using a number like 0.1 or 0.5.</Form.Text>
               </Form.Group>
             </Col>
           </Row>
