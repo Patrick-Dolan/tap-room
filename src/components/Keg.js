@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 function Keg(props) {
   return (
@@ -9,8 +10,8 @@ function Keg(props) {
       <p>Price: ${props.price}</p>
       <p>Alcohol Content: {props.alcoholContent}%</p>
       <p>Pints: {props.pints} Remaining</p>
-      <button onClick = {() => props.whenKegClicked(props.id)}>Keg Details</button>
-      <button onClick = {() => props.whenDecrementingPintsClicked(props.id)}>Sell Pint</button>
+      <Button className="me-2" onClick = {() => props.whenKegClicked(props.id)}>Keg Details</Button>
+      <Button className="me-2" onClick = {() => props.whenDecrementingPintsClicked(props.id)}>Sell Pint</Button>
       <hr />
     </React.Fragment>
   );
