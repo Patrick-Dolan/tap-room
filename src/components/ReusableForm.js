@@ -15,7 +15,8 @@ function ReusableForm(props) {
                 <Form.Control
                   type="text"
                   name="name"
-                  placeholder="Brew Name" />
+                  placeholder="Brew Name" 
+                  required />
               </Form.Group>
             </Col>
             <Col>
@@ -24,7 +25,8 @@ function ReusableForm(props) {
                 <Form.Control
                   type="text"
                   name="brand"
-                  placeholder="Brand Name" />
+                  placeholder="Brand Name"
+                  required />
               </Form.Group>
             </Col>
           </Row>
@@ -35,7 +37,8 @@ function ReusableForm(props) {
                 <Form.Control
                   type="number"
                   name="price"
-                  placeholder="Price" />
+                  placeholder="Price"
+                  required />
               </Form.Group>
             </Col>
             <Col>
@@ -44,7 +47,8 @@ function ReusableForm(props) {
                 <Form.Control
                   type="number"
                   name="alcoholContent"
-                  placeholder="Alcohol Content Percentage" />
+                  placeholder="Alcohol Content Percentage"
+                  required />
               </Form.Group>
             </Col>
             <Col>
@@ -53,7 +57,8 @@ function ReusableForm(props) {
                 <Form.Control
                   type="number"
                   name="pints"
-                  placeholder="Pints" />
+                  placeholder="Pints"
+                  required />
               </Form.Group>
             </Col>
           </Row>
