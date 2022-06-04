@@ -42,12 +42,13 @@ class KegControl extends React.Component {
   }
 
   handleDecrementingPintsSold = kegId => {
-    //Find and change value on selected keg
-    const selectedKeg = this.state.mainKegList.filter(keg => keg.id === kegId )[0];
-    if (selectedKeg.pints === 0) { return; }
-    const changedKeg = {...selectedKeg, pints: selectedKeg.pints - 1};
-    //Build and set new mainKegList
-    const newMainKegList = this.state.mainKegList.filter(keg => keg.id !== kegId ).concat(changedKeg);
+    const newMainKegList = this.state.mainKegList.map((element) => {
+      if (element.id === kegId && element.pints >= 1) {
+        const keg = {...element, pints: element.pints - 1}
+        return keg;
+      } 
+      return element;
+    });
     this.setState({
       mainKegList: newMainKegList
     });
