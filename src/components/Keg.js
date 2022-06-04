@@ -22,7 +22,7 @@ Keg.propTypes = {
   alcoholContent: PropTypes.number,
   pints: PropTypes.number,
   id: PropTypes.string,
-  whenTicketClicked: PropTypes.func
+  whenKegClicked: PropTypes.func
 };
 
 export default Keg;
