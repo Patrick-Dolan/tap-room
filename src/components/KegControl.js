@@ -44,7 +44,8 @@ class KegControl extends React.Component {
   handleDecrementingPintsSold = kegId => {
     //Find and change value on selected keg
     const selectedKeg = this.state.mainKegList.filter(keg => keg.id === kegId )[0];
-    const changedKeg = selectedKeg.pints - 1;
+    if (selectedKeg.pints === 0) { return; }
+    const changedKeg = {...selectedKeg, pints: selectedKeg.pints - 1};
     //Build and set new mainKegList
     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !== kegId ).concat(changedKeg);
     this.setState({
@@ -63,7 +64,7 @@ class KegControl extends React.Component {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText="Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegDetailsSelection={this.handleChangingSelectedKeg} onDecrementingPints={this.handleDecrementingPintsSold} />
       buttonText="Add Keg to Inventory";
     }
 
