@@ -19,6 +19,7 @@ function NewKegForm(props) {
 
   return (
     <React.Fragment>
+      <h3>Add new Keg to inventory</h3>
       <ReusableForm
         formSubmissionHandler={handleNewKegFormSubmission}
         buttonText="Add Keg" />
