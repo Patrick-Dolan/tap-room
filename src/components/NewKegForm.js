@@ -7,7 +7,7 @@ function NewKegForm(props) {
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewTicketCreation({
+    props.onNewKegCreation({
       name: event.target.name.value,
       brand: event.target.brand.value,
       price: parseInt(event.target.price.value),
@@ -27,7 +27,7 @@ function NewKegForm(props) {
 }
 
 NewKegForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func
 };
 
 export default NewKegForm;
